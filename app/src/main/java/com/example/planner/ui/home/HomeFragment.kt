@@ -4,10 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.planner.databinding.FragmentHomeBinding
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
 
@@ -21,7 +22,13 @@ class HomeFragment : Fragment() {
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
+
     ): View {
+        // Button Click - Creating Runtime Error
+        Submit.setOnClickListener(){
+            Toast.makeText(requireActivity(), "Message", Toast.LENGTH_SHORT).show()
+        }
+
         val homeViewModel =
                 ViewModelProvider(this).get(HomeViewModel::class.java)
 
